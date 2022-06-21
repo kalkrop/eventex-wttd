@@ -1,0 +1,9 @@
+.vscode
+.wttd
+.env
+*.sqlite3
+*pyc
+__pycache__
+landingpage.zip
+mod-1-28-mapa-da-estrutura-do-eventex.xmind
+mod-1-28-mapa-da-estrutura-do-eventex.zip
