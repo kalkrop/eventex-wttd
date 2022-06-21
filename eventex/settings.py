@@ -14,7 +14,6 @@ from ctypes import cast
 from email.policy import default
 from pathlib import Path
 from decouple import config
-# import os
 from dj_database_url import parse as dburl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,13 +79,10 @@ WSGI_APPLICATION = 'eventex.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 # default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-default_dburl = 'sqlite:///' + BASE_DIR / 'db.sqlite3'
+default_dburl = 'sqlite:///' + str(BASE_DIR / 'db.sqlite3')
 DATABASES = {
     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
-    # 'default': {
-    # 'ENGINE': 'django.db.backends.sqlite3',
-    # 'NAME': BASE_DIR / 'db.sqlite3',
-    # }
+
 }
 
 
@@ -125,7 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR, 'staticfiles'
+STATIC_ROOT = str(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
