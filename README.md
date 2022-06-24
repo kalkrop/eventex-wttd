@@ -299,5 +299,5 @@ heroku config:set DEBUG=True
 <h2>Realizar deploy</h2>
 
 ```
-git push heroku master --force 
+git push heroku main --force 
 ```
